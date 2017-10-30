@@ -11,16 +11,19 @@
 
 using namespace std;
 
-class car{
-	int i;
-public:
-	car(int a):i(a){}
-};
-
-int main() {
+int main(int argc,char*args[]) {
 
 
 
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	//测试socket编程
+//	if(argc>1){
+//		cout<<"arg:"<<args[1]<<"  server"<<endl;
+//		socketServerTest();
+//	}
+//	else{
+//		cout<<endl<<"client";
+//		socketClientTest();
+//	}
 	return 0;
 }
