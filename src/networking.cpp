@@ -49,25 +49,24 @@ void socketServerTest(){
     close(listenfd);
 }
 
-
 void socketClientTest(){
 
     struct sockaddr_in servaddr;
     char buf[80];
     int sockfd, n;
-    char *str;
+    char *contentstr;
 
-    str = "clientsendto..";
+    contentstr = "clientsendto..";
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
 //    bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    inet_pton(AF_INET, "127.0.0.1", &servaddr.sin_addr);//地址点分十进制转二进制，用于传输
+    inet_pton(AF_INET, "192.168.2.138", &servaddr.sin_addr);//地址点分十进制转二进制，用于传输
     servaddr.sin_port = htons(8787);
     /*连接*/
     connect(sockfd, (sockaddr *)&servaddr, sizeof(servaddr));//为socket绑定参数，连接到服务端
     /*向sockfd写入字符串str*/
-    write(sockfd, str, strlen(str));
+    write(sockfd, contentstr, strlen(contentstr));
     /*读取经过服务端处理的sockfd到buf中*/
     n = read(sockfd, buf, 80);
     printf("服务端应答:\n");
@@ -75,4 +74,10 @@ void socketClientTest(){
 
     write(1, buf, n);
     close(sockfd);
+}
+
+void domain_to_IPAddr(char* domainName){// <netdb.h>
+	hostent *pHE=::gethostbyname(domainName); //host entry 一个包含主机信息的对象
+	if(NULL==pHE){cout<<"error  parameter"<<endl;  return;}
+	cout<<inet_ntoa(*((in_addr*)pHE->h_addr_list[0]));  //in_addr网络字节序IPV4  转成IPV4字符串格式
 }

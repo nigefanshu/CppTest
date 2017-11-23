@@ -25,5 +25,17 @@ int main(int argc,char*args[]) {
 //		cout<<endl<<"client";
 //		socketClientTest();
 //	}
+
+	//多线程文件传输
+//	if(argc>1){
+//		cout<<"arg:"<<args[1]<<" server"<<endl;
+//
+//	}
+//	else{
+//		cout<<"arg:"<<" client"<<endl;
+//
+//	}
+
+	domain_to_IPAddr("www.baidu.com");
 	return 0;
 }

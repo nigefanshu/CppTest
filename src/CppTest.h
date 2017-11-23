@@ -9,13 +9,24 @@
 #define CPPSOCKET_H_
 
 #include <string.h>
-#include <iostream>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <stdio.h>
+#include <iostream>//cout
+#include <sys/socket.h>//socket方法
+#include <netinet/in.h>//网络连接输入输出 sockaddr_in
+#include <arpa/inet.h>//网络连接参数转换inet_ntop等  in_addr
+#include <unistd.h>//unix方法 sleep等
+#include <cstdio>//read  write
+#include <netdb.h>//hostent(:host entry)  gethostbyname(char*)
 
+//socket通信基础
 void socketClientTest();
 void socketServerTest();
+
+//域名转IP地址
+void domain_to_IPAddr(char* domainName);
+
+//socket多线程文件传输示例
+void multiThreadSocketFileServer();
+void multiThreadSocketFileClient();
+
+
 #endif /* CPPSOCKET_H_ */
