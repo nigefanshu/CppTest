@@ -16,17 +16,13 @@
 #include <unistd.h>//unix方法 sleep等
 #include <cstdio>//read  write
 #include <netdb.h>//hostent(:host entry)  gethostbyname(char*)
+#include <thread>
 
-//socket通信基础
+//socket通信基础  多线程
 void socketClientTest();
 void socketServerTest();
 
 //域名转IP地址
 void domain_to_IPAddr(char* domainName);
-
-//socket多线程文件传输示例
-void multiThreadSocketFileServer();
-void multiThreadSocketFileClient();
-
 
 #endif /* CPPSOCKET_H_ */

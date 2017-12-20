@@ -22,7 +22,7 @@ int main(int argc,char*args[]) {
 //		socketServerTest();
 //	}
 //	else{
-//		cout<<endl<<"client";
+//		cout<<"client"<<endl;
 //		socketClientTest();
 //	}
 
@@ -36,6 +36,10 @@ int main(int argc,char*args[]) {
 //
 //	}
 
-	domain_to_IPAddr("www.baidu.com");
+	//输入域名打印出相应的额ip地址
+//	domain_to_IPAddr("www.baidu.com");
+
 	return 0;
 }
+
+
